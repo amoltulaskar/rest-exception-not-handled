@@ -1,8 +1,8 @@
 # rest-helloworldexception
-This is hello world example using jersey framework. This is independent of IDE and you can build project using ant and deploy.
-JAVAX.WS.RS provides specifications and there should be someone to implement it. That is what Jersey do. There are other frameworks like RestAssure, RestEasy. Point here is you can
-change framework without changing your code (obviously libraries will change). So if you mention "@Path("/api/v1/hello") public String getHello{...}", this will never change and any framework
-will hit same block of code.
+This is example of exception in jersey framework or more precisely in JAVAX.WS.RS. Project is independent of IDE and you can build project using ant and then deploy.
+
+In example we are throwing exception and as there is nothing to catch exception is finally reached to tomcat. Just fore an API using postman.
+
 How to compile :-
 1. You can create intellij/eclipse project but that will not give you exactly what is happening. So I used ant. You need to install ant but it is very simple and worth. Yes. Really worth!!!
 2. Set up ant. Just google it. You need to install and set few environment variables.
