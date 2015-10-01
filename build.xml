@@ -1,0 +1,28 @@
+<project name="ProjectName">
+	<path id="classpath.external.jars">
+        <fileset dir="${project.dir}">
+            <include name="lib/*.jar"/>
+        </fileset>
+        <fileset dir="${tomcat.path}">
+            <include name="lib/*.jar"/>
+        </fileset>
+    </path>
+	
+	<target name="build-app">
+		<echo>Building :: ${app.name}...</echo>
+	
+		<mkdir dir="${project.dir}/${app.name}"/>
+		<javac srcdir="${project.dir}/src" destdir="${project.dir}/${app.name}" includeantruntime="false" debug="true" debuglevel="lines,vars,source">
+			<classpath refid="classpath.external.jars"/>
+		</javac>
+		
+		<war destfile="${project.dir}/${app.name}.war" webxml="${project.dir}/web/WEB-INF/web.xml">
+			<lib dir="${project.dir}/lib">
+                <include name="*.jar"/>
+            </lib>
+			<classes dir="${project.dir}/${app.name}">
+                <include name="**/*.*"/>
+            </classes>
+		</war>
+	</target>
+</project>
